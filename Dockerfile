@@ -3,7 +3,7 @@ MAINTAINER Yury Kozyrev "urakozz@gmail.com"
 
 RUN apk --update add curl && \
     curl -o /tmp/dynamo.tar.gz -L http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dynamodb_local_latest.tar.gz && \
-    tar xvzf /tmp/dynamo.tar.gz && \
+    tar xvzf /tmp/dynamo.tar.gz && rm /tmp/dynamo.tar.gz && \
     rm -rf third_party_licenses LICENSE.txt && \
     apk --purge del curl
 
